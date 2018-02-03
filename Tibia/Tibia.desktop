@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Tibia
+Exec=bash /opt/tibia/start-tibia.sh
+Icon=/opt/tibia/tibia.ico
+Type=Application
+Categories=Games;Other;

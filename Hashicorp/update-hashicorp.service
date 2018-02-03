@@ -1,0 +1,9 @@
+[Unit]
+Description = Updates Hashicorp products
+After       = network.target
+
+[Service]
+ExecStart   = /usr/local/bin/update-hashicorp.sh
+
+[Install]
+WantedBy    = multi-user.target

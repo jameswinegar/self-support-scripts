@@ -1,0 +1,9 @@
+[Unit]
+Description = Updates Tibia
+After       = network.target
+
+[Service]
+ExecStart   = /usr/local/bin/update-tibia.sh
+
+[Install]
+WantedBy    = multi-user.target
