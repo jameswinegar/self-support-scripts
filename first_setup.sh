@@ -1,23 +1,31 @@
+# Initial update of system
 sudo apt update
 sudo apt upgrade -y
 
+# install sqlite
 sudo apt install -y sqlite
 
-sudo apt install -y snapd
+#install python and pipenv
+sudo apt install python-pip python3-pip
+pip3 install --user pipenv
+echo 'export PATH="${HOME}/.local/bin:$PATH"' > ${HOME}/.bashrc
+source ${HOME}/.bashrc
 
+# install snap and install what can be done through snaps
+sudo apt install -y snapd
+sudo snap install slack --classic
+sudo snap install pycharm-professional --classic
+sudo snap install discord
+sudo snap install spotify
+
+# install cuda
 sudo apt install -y nvidia-cuda-toolkit gcc-6
 
+# install google chrome
 wget -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install /tmp/google-chrome.deb -y
 
-sudo snap install slack --classic
-
-sudo snap install pycharm-professional --classic
-
-sudo snap install discord
-
-sudo snap install spotify
-
+# install docker
 sudo apt install -y \
     apt-transport-https \
     ca-certificates \
@@ -32,16 +40,21 @@ sudo add-apt-repository \
 sudo apt update
 sudo apt install docker-ce
 
+# install gcloud and kubectl
 sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt update
-sudo apt install -y google-cloud-sdk kubectl
+sudo apt install -y google-cloud-sdk
+sudo apt install -y kubectl
 
+# add systems monitor to task bar
 sudo apt install -y gnome-shell-extension gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
 sudo wget -O /usr/local/bin/gnomeshell-extension-manage "https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/ubuntugnome/gnomeshell-extension-manage"
 sudo chmod +x /usr/local/bin/gnomeshell-extension-manage
 gnomeshell-extension-manage --install --extension-id 120
 
+# add Hashicorp service updater. TODO: Only update when needed, currently downloads on each init of systemd
 sudo ./publisher.sh
+
