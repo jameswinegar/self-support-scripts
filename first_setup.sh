@@ -2,9 +2,17 @@
 sudo apt update
 sudo apt upgrade -y
 
+# install libsecret
+sudo apt install -y libsecret-1-0 libsecret-1-dev
+(cd /usr/share/doc/git/contrib/credential/libsecret && sudo make)
+
 # set git email
 git config --global user.email "jameswine@gmail.com"
 git config --global user.name "jameswinegar"
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+# enable locate
+sudo ionice -c3 updatedb
 
 # install sqlite
 sudo apt install -y sqlite
