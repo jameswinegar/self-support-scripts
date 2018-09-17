@@ -2,6 +2,9 @@
 sudo apt update
 sudo apt upgrade -y
 
+# set git email
+git config --global user.email "jameswine@gmail.com"
+
 # install sqlite
 sudo apt install -y sqlite
 
