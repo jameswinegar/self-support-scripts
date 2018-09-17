@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # move desktop, scripts, and service files to appropriate locations
-for FOLDER in Tibia Hashicorp
+for FOLDER in Hashicorp
 do
   rsync -avzh --include='*/' --include="*.desktop" --exclude="*" $FOLDER/ /usr/share/applications/
   rsync -avzh --include='*/' --include="*.sh" --exclude="*" $FOLDER/ /usr/local/bin/
