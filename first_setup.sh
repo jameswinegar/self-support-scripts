@@ -4,6 +4,7 @@ sudo apt upgrade -y
 
 # set git email
 git config --global user.email "jameswine@gmail.com"
+git config --global user.name "jameswinegar"
 
 # install sqlite
 sudo apt install -y sqlite
