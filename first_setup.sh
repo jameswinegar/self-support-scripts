@@ -70,3 +70,11 @@ gnomeshell-extension-manage --install --extension-id 120
 # add Hashicorp service updater. TODO: Only update when needed, currently downloads on each init of systemd
 sudo ./publisher.sh
 
+# Remind me to do stuff
+printf '\n\n\n\n\n\n'
+echo "DO THE FOLLOWING:"
+echo "1. Add slack channels"
+echo "2. Add google accounts"
+echo "3. Initalize gcloud cli"
+echo "4. Setup PyCharm"
+echo "5. Login to spotify & discord"
