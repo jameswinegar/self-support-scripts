@@ -11,6 +11,9 @@ git config --global user.email "jameswine@gmail.com"
 git config --global user.name "jameswinegar"
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
+# move dotfiles
+cp dotfiles/.bash_aliases ${HOME}
+
 # enable locate
 sudo ionice -c3 updatedb
 
