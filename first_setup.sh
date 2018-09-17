@@ -20,7 +20,7 @@ sudo apt install -y sqlite
 #install python and pipenv
 sudo apt install python-pip python3-pip
 pip3 install --user pipenv
-echo 'export PATH="${HOME}/.local/bin:$PATH"' > ${HOME}/.bashrc
+echo 'export PATH="${HOME}/.local/bin:$PATH"' >> ${HOME}/.bashrc
 source ${HOME}/.bashrc
 
 # install snap and install what can be done through snaps
