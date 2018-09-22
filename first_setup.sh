@@ -20,6 +20,9 @@ sudo ionice -c3 updatedb
 # install sqlite
 sudo apt install -y sqlite
 
+# install java and maven
+sudo apt install -y openjdk-8-jdk maven
+
 #install python and pipenv
 sudo apt install python-pip python3-pip
 pip3 install --user pipenv
