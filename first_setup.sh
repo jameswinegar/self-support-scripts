@@ -14,6 +14,10 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 # move dotfiles
 cp dotfiles/.bash_aliases ${HOME}
 
+# install fonts
+sudo apt install -y cabextract font-manager
+sudo wget -O /usr/share/fonts/Inconsolata-Regular.ttf https://github.com/google/fonts/raw/master/ofl/inconsolata/Inconsolata-Regular.ttf
+
 # enable locate
 sudo ionice -c3 updatedb
 
